@@ -1,0 +1,361 @@
+/* General Styling */
+body {
+    font-family: 'Courier New', monospace; /* Czcionka monospace */
+    margin: 0;
+    padding: 0;
+    background: #0d1117; /* Ciemne tło przypominające edytor kodu */
+    color: #c9d1d9; /* Jasny kolor tekstu, aby był widoczny na ciemnym tle */
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: rgba(28, 32, 36, 0.8); /* Ciemniejsze tło nagłówka */
+    padding: 15px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none; /* Usunięcie podkreślenia */
+    color: #58a6ff; /* Jasnoniebieski kolor linków */
+    padding: 10px 15px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+nav ul li.current a {
+    color: #c9d1d9; /* Biały kolor dla aktywnego linku */
+    text-decoration: none; /* Usunięcie podkreślenia */
+}
+
+nav ul li a:hover {
+    background: rgba(88, 166, 255, 0.2); /* Neonowy niebieski podświetlenie */
+    border-radius: 5px;
+    color: #c9d1d9; /* Zmiana koloru tekstu na biały przy hover */
+}
+
+/* Main content */
+.container {
+    max-width: 900px;
+    margin: 50px auto;
+    background: rgba(28, 32, 36, 0.8); /* Tło w ciemnych odcieniach */
+    padding: 30px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 1s forwards;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Headings */
+h1, h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #58a6ff; /* Jasnoniebieski kolor nagłówków */
+    text-transform: uppercase;
+}
+
+/* Testimonials Styling */
+.testimonial {
+    background: rgba(28, 32, 36, 0.8); /* Ciemne tło z lekką przezroczystością */
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.testimonial:hover {
+    transform: translateY(-10px); /* Delikatny efekt unoszenia się przy hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Zwiększenie cienia */
+}
+
+.testimonial p {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: #c9d1d9; /* Jasny kolor tekstu */
+    margin-bottom: 15px;
+}
+
+.testimonial .stars {
+    color: #ffbf00; /* Kolor złotych gwiazdek */
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.testimonial h4 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #58a6ff; /* Jasnoniebieski kolor nazwiska */
+}
+
+/* Button for Adding Review */
+#add-review-btn {
+    background-color: #58a6ff;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 30px auto;
+}
+
+#add-review-btn:hover {
+    background-color: #467cbb; /* Zmiana koloru przy hover */
+}
+
+/* Footer */
+footer {
+    background: rgba(28, 32, 36, 0.9); /* Ciemne tło stopki */
+    padding: 20px;
+    margin-top: auto;
+    text-align: center; /* Wyśrodkowanie tekstu */
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    font-size: 2em;
+    margin-bottom: 15px;
+}
+
+.social-links a {
+    color: #58a6ff; /* Jasnoniebieski kolor ikon społecznościowych */
+    text-decoration: none; /* Usunięcie podkreślenia */
+}
+
+.social-links a:hover {
+    color: #c9d1d9; /* Zmiana koloru przy hover */
+}
+
+.social-links i {
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover i {
+    transform: scale(1.2); /* Powiększenie ikony */
+}
+
+/* Animacje */
+.rgb-text {
+    font-weight: bold;
+    animation: rgb-animation 3s infinite alternate;
+    text-decoration: none; /* Usunięcie podkreślenia */
+}
+
+@keyframes rgb-animation {
+    0% {
+        color: #ff6b6b; /* Czerwony */
+    }
+    33% {
+        color: #58a6ff; /* Niebieski */
+    }
+    66% {
+        color: #00ff00; /* Zielony */
+    }
+    100% {
+        color: #f1fa8c; /* Żółty */
+    }
+}
+
+.rgb-text:hover {
+    text-decoration: underline; /* Podkreślenie przy hover */
+}
+
+/* Portfolio */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Cztery kolumny na większych ekranach */
+    gap: 20px;
+    padding: 20px;
+}
+
+.portfolio-item {
+    background: #161b22; /* Ciemne tło dla każdego elementu portfolio */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background: #0d1117; /* Zmiana tła na ciemniejsze */
+}
+
+.portfolio-item img {
+    max-width: 120px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    transition: transform 0.2s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1); /* Powiększenie obrazu przy hover */
+}
+
+.portfolio-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #c9d1d9; /* Jasny kolor dla tytułów projektów */
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr); /* Dwie kolumny na mniejszych ekranach */
+    }
+
+    h1, h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* Jedna kolumna na bardzo małych ekranach */
+    }
+
+    h1, h2 {
+        font-size: 1.2rem;
+    }
+
+    .testimonial p {
+        font-size: 1rem; /* Zmniejszenie czcionki na bardzo małych ekranach */
+    }
+
+    .testimonial h4 {
+        font-size: 1.1rem; /* Zmniejszenie czcionki na bardzo małych ekranach */
+    }
+
+    .testimonial .stars {
+        font-size: 1.3rem; /* Zmniejszenie rozmiaru gwiazdek */
+    }
+}
+/* Review Form Styling */
+.review-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.review-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.review-form input,
+.review-form select,
+.review-form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    background: #0d1117;
+    color: #c9d1d9;
+    border: 1px solid #58a6ff;
+    border-radius: 5px;
+}
+
+.review-form button {
+    background-color: #58a6ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.review-form button:hover {
+    background-color: #467cbb;
+}
+/* Formularz kontaktowy */
+form {
+    display: flex;
+    flex-direction: column;
+    background: rgba(28, 32, 36, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
+    margin-top: 30px;
+}
+
+form h2 {
+    color: #58a6ff;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    background: #0d1117;
+    color: #c9d1d9;
+    border: 1px solid #58a6ff;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.form-group button {
+    background-color: #58a6ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.form-group button:hover {
+    background-color: #467cbb;
+}
+.logo img {
+    max-width: 150px; /* Ustaw szerokość logo */
+    height: auto;     /* Automatyczna wysokość, aby zachować proporcje */
+}
