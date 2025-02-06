@@ -1,0 +1,338 @@
+/* Reset */
+body, h1, h2, h3, p, ul, li {
+  margin: 0;
+  padding: 0;
+}
+
+/* Globalne style */
+body {
+  cursor: none; /* Ukrywa domyślny kursor */
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: 'Courier New', monospace;
+  background-color: #121212;
+  color: #00ff00;
+  line-height: 1.6;
+  transition: background-color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Zapewnia, że stopka będzie na dole strony */
+  padding-top: 80px; /* Odstęp od nawigacji */
+}
+
+/* Nawigacja */
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #1e1e1e;
+  padding: 15px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+/* Zwykłe style dla linków */
+.nav-link {
+  color: #00ff00;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2em;
+  text-transform: uppercase;
+  position: relative;
+  padding: 5px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Aktywny link - podświetlenie i animacja */
+.nav-link.active {
+  color: #ff007f;
+  animation: blink 1s infinite; /* Mryganie */
+}
+
+/* Efekt mrygania */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* Zmiana koloru linku przy najechaniu */
+.nav-link:hover {
+  color: #ff007f;
+  transform: scale(1.1); /* Powiększenie przy najechaniu */
+  animation: bounce 0.5s ease-in-out;
+}
+
+/* Animacja bounce przy najechaniu */
+@keyframes bounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Sekcja Welcome */
+.welcome {
+  text-align: center;
+  padding: 120px 20px; /* Przestrzeń od góry dla tej sekcji */
+}
+
+.welcome h2 {
+  font-size: 3em;
+  color: #f39c12;
+}
+
+.welcome p {
+  font-size: 1.5em;
+  margin-top: 10px;
+  color: #aaa;
+}
+
+/* Sekcja Tools */
+.tools {
+  padding-top: 120px; /* Dodatkowa przestrzeń od góry */
+  text-align: center;
+}
+
+.tools h2 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.tools .terminal {
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 1.2em;
+  color: #00ff00;
+  margin-bottom: 20px;
+}
+
+/* Sekcja Resources */
+.resources-header {
+  text-align: center;
+  padding: 100px 20px; /* Odstęp od góry */
+}
+
+.resources-header h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.resources-header p {
+  font-size: 1.5em;
+}
+
+.resources-section {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.resources-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+}
+
+.resources-list {
+  list-style-type: none;
+}
+
+.resources-list li {
+  font-size: 1.3em;
+  margin-bottom: 20px;
+}
+
+.resource-link {
+  color: #00ff00;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.resource-link:hover {
+  color: #ff007f;
+}
+
+/* Stopka */
+footer {
+  background-color: #121212;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 1em;
+  border-top: 2px solid #00ff00;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.5);
+  margin-top: auto; /* Zapewnia, że stopka będzie na dole strony */
+}
+
+footer p {
+  margin: 0;
+}
+
+footer a.rgb-text {
+  color: #ff007f;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+footer a.rgb-text:hover {
+  color: #00ff00;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+  .nav-link {
+    font-size: 1em;
+    margin: 0 10px;
+  }
+
+  .welcome h2 {
+    font-size: 2.5em;
+  }
+
+  .tools h2 {
+    font-size: 2.5em;
+  }
+
+  .portfolio-logo {
+    width: 200px;
+    height: 200px;
+  }
+
+  .portfolio-content h3 {
+    font-size: 1.5em;
+  }
+
+  .portfolio-content p {
+    font-size: 1em;
+  }
+
+  .btn {
+    font-size: 1em;
+  }
+}
+.centered {
+  text-align: center;
+  padding: 40px 20px;
+}
+/* Sekcja Portfolio */
+.portfolio-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.portfolio-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #f39c12;
+}
+
+.portfolio-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.portfolio-logo {
+  width: 300px;  /* Zwiększono rozmiar */
+  height: 300px; /* Zwiększono rozmiar */
+  border-radius: 50%; /* Tworzy okrągły kształt */
+  object-fit: cover; /* Dostosowuje obrazek, aby pasował do kontenera */
+  border: 4px solid #00ff00; /* Opcjonalnie, dodajemy obramowanie */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efekt powiększenia przy najechaniu */
+.portfolio-logo:hover {
+  transform: scale(1.1); /* Powiększa zdjęcie */
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.7); /* Dodaje cień */
+}
+@media (max-width: 768px) {
+  .portfolio-logo {
+    width: 200px;  /* Zmniejszenie rozmiaru na mniejszych ekranach */
+    height: 200px; /* Zmniejszenie rozmiaru na mniejszych ekranach */
+  }
+}
+/* Artykuły na blogu */
+.blog-section {
+  padding: 60px 20px;
+  text-align: left;
+}
+
+.blog-section h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #f39c12;
+}
+
+.blog-post {
+  margin-bottom: 40px;
+  padding: 20px;
+  border: 1px solid #00ff00;
+  border-radius: 10px;
+  background-color: #1e1e1e;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.blog-post h3 {
+  font-size: 1.8em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.blog-post .date {
+  font-size: 1em;
+  color: #aaa;
+}
+
+/* Ukrywanie zawartości w domyśle */
+.blog-post .blog-content {
+  height: 100px; /* Początkowa wysokość */
+  overflow: hidden; /* Ukrywanie nadmiaru */
+  transition: all 0.5s ease;
+  opacity: 0;
+}
+
+/* Rozwijanie zawartości */
+.blog-post:hover .blog-content {
+  height: auto;
+  opacity: 1;
+}
+
+/* Płynna animacja przy rozwijaniu */
+.blog-post:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 15px rgba(0, 255, 0, 0.3);
+}
+
+.blog-post .blog-content p {
+  font-size: 1.2em;
+  color: #ccc;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.blog-post:hover .blog-content p {
+  color: #fff;
+}
+/* Kontener dla logo */
+.logo-container {
+  position: fixed; /* Pozycjonowanie logo w lewym górnym rogu */
+  top: 10px; /* Odstęp od góry */
+  left: 10px; /* Odstęp od lewej krawędzi */
+  z-index: 100; /* Zapewnia, że logo będzie zawsze na wierzchu */
+}
+
+/* Stylowanie logo */
+.logo {
+  width: 60px; /* Szerokość logo */
+  height: 60px; /* Wysokość logo */
+  border-radius: 50%; /* Zaokrąglenie logo */
+  object-fit: cover; /* Zachowanie proporcji przy zaokrąglonym logo */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); /* Cień dla logo */
+}
