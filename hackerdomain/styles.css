@@ -6,7 +6,6 @@ body, h1, h2, h3, p, ul, li {
 
 /* Globalne style */
 body {
-  cursor: none; /* Ukrywa domyślny kursor */
   margin: 0;
   padding: 0;
   height: 100vh;
